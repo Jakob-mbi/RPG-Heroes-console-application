@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes_console_application.Equipments
 {
-    internal class EquipmentBaseClass
+    internal abstract class EquipmentBaseClass
     {
         public string Name { get; set; }
         public int RequiredLevel { get; set; }
@@ -17,11 +17,6 @@ namespace RPG_Heroes_console_application.Equipments
             this.Name = name;
             this.RequiredLevel = requiredLevel;
             this.Slot = slot;
-        }
-
-        public EquipmentBaseClass(string name)
-        {
-            Name = name;
         }
     }
 }

@@ -8,13 +8,16 @@ namespace RPG_Heroes_console_application.Equipments.Wepons
 {
     internal class WeponsClass : EquipmentBaseClass
     {
-        public WeponTypeEnum WeponType { get; set; }
+        public WeaponTypeEnum WeponType { get; set; }
+        public int WeaponDamage { get; set; }
 
-        public WeponsClass(string name, int requiredLevel, SlotEnum slot) : base(name, requiredLevel, slot)
+        public WeponsClass(string name, int requiredLevel, WeponTypeEnum weponType,int weaponDamage) : base(name, requiredLevel, slot)
         {
             this.Name = name;
-            RequiredLevel= requiredLevel;
-            Slot= slot;
+            RequiredLevel = requiredLevel;
+            Slot = SlotEnum.Wepon
+            WeponType = weponType;
+            WeaponDamage = weaponDamage;
         }
     }
 }
