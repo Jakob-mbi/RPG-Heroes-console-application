@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RPG_Heroes_console_application.Equipment.EquipmentItem;
-using RPG_Heroes_console_application.Equipments;
+using RPG_Heroes_console_application.EquipmentItem;
+using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
+
 
 namespace RPG_Heroes_console_application.EquipmentItem.WeponsItem
 {
@@ -13,11 +14,11 @@ namespace RPG_Heroes_console_application.EquipmentItem.WeponsItem
         public WeaponTypeEnum WeponType { get; set; }
         public int WeaponDamage { get; set; }
 
-        public WeponsItemClass(string name, int requiredLevel, WeponTypeEnum weponType, int weaponDamage) : base(name, requiredLevel, slot)
+        public WeponsItemClass(string name, int requiredLevel, WeaponTypeEnum weponType, int weaponDamage, SlotEnum slot) : base(name, requiredLevel, slot)
         {
-            Name = name;
+            this.Name = name;
             RequiredLevel = requiredLevel;
-            Slot = SlotEnum.Wepon
+            Slot = SlotEnum.Wepon;
             WeponType = weponType;
             WeaponDamage = weaponDamage;
         }

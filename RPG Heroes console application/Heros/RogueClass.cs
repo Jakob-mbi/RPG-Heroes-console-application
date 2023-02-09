@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_Heroes_console_application.EquipmentItem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace RPG_Heroes_console_application.Heros
             this.HeroAttributes = new HeroAttribute(2, 6, 1);
         }
 
-        public enum EquipmentTypeAllowdForRogues
+        public enum EquipmentTypeAllowd
         {
             Dagger,
             Sword,
@@ -32,11 +33,6 @@ namespace RPG_Heroes_console_application.Heros
             throw new NotImplementedException();
         }
 
-        public override void Equip()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void LevelUp()
         {
             this.Level += 1;
@@ -44,6 +40,11 @@ namespace RPG_Heroes_console_application.Heros
         }
 
         public override void TotalAttributes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Equip(HeroBaseClass.EquipmentTypeAllowd Type, SlotEnum slot)
         {
             throw new NotImplementedException();
         }

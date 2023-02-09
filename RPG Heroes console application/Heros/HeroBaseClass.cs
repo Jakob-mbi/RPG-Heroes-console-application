@@ -1,6 +1,5 @@
 ﻿using RPG_Heroes_console_application.EquipmentItem;
 using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
-using RPG_Heroes_console_application.Equipments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,18 +21,23 @@ namespace RPG_Heroes_console_application.Heros
 
         public string ValidArmorTypes { get; set; }
 
+        public enum EquipmentTypeAllowd { }
 
         public HeroBaseClass(string name)
         {
             this.Name = name;
-            Equipment.Add(SlotEnum.Wepon, null);
-            Equipment.Add(SlotEnum.Legs, null);
-            Equipment.Add(SlotEnum.Head, null);
-            Equipment.Add(SlotEnum.Body, null);
+            Equipment.Add(SlotEnum.Wepon, value: null);
+            Equipment.Add(SlotEnum.Legs, value: null);
+            Equipment.Add(SlotEnum.Head, value: null);
+            Equipment.Add(SlotEnum.Body, value: null);
         }
 
         public abstract void LevelUp();
-        public abstract void Equip();
+        public abstract void Equip(EquipmentTypeAllowd Type, SlotEnum slot)
+        {
+            throw new NotImplementedException();
+
+        }
         public abstract void Damage();
         public abstract void TotalAttributes();
         public abstract void Display();

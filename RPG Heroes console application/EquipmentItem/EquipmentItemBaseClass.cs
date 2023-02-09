@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RPG_Heroes_console_application.Equipment.EquipmentItem;
-using RPG_Heroes_console_application.Equipments;
+using RPG_Heroes_console_application.EquipmentItem;
 
 namespace RPG_Heroes_console_application.EquipmentItem
 {
