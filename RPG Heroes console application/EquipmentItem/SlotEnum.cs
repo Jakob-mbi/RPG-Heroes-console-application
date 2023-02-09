@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes_console_application.Equipments
+namespace RPG_Heroes_console_application.EquipmentItem
 {
-    internal enum SlotEnum
+    public enum SlotEnum
     {
         Wepon,
         Head,

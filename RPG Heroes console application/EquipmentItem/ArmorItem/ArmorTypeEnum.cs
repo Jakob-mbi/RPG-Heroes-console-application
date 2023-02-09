@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes_console_application.Equipments.Armor
+namespace RPG_Heroes_console_application.EquipmentItem.ArmorItem
 {
     internal enum ArmorTypeEnum
     {

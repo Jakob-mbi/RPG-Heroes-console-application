@@ -12,6 +12,7 @@ namespace RPG_Heroes_console_application.Heros
         {
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(1,1,8);
+            Eq
 
         }
 
