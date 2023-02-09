@@ -14,6 +14,14 @@ namespace RPG_Heroes_console_application.Heros
             this.HeroAttributes = new HeroAttribute(2, 6, 1);
         }
 
+        public enum EquipmentTypeAllowdForRogues
+        {
+            Dagger,
+            Sword,
+            Lether,
+            Mail
+        }
+
         public override void Damage()
         {
             throw new NotImplementedException();

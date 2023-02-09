@@ -8,11 +8,21 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal class WarriorClass : HeroBaseClass
     {
-        public RogueClass(string name) : base(name)
+        public WarriorClass(string name) : base(name)
         {
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(5, 2, 1);
         }
+
+        public enum EquipmentTypeAllowdForWarrior
+        {
+            Axe,
+            Hammer,
+            sword,
+            Mail,
+            Plate
+        }
+
         public override void Damage()
         {
             throw new NotImplementedException();

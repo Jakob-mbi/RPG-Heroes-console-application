@@ -13,6 +13,12 @@ namespace RPG_Heroes_console_application.Heros
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(1, 7, 1);
         }
+        public enum EquipmentTypeAllowdForRangers
+        {
+            Bow,
+            Leather,
+            Mail
+        }
 
         public override void Damage()
         {

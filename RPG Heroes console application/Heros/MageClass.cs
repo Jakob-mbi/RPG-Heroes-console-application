@@ -12,10 +12,14 @@ namespace RPG_Heroes_console_application.Heros
         {
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(1,1,8);
-            Eq
 
         }
-
+        public enum EquipmentTypeAllowdForMages
+        {
+            staff,
+            Wand,
+            Cloth
+        }
         public override void Damage()
         {
             throw new NotImplementedException();
