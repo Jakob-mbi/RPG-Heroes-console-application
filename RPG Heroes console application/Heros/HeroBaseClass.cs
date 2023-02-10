@@ -10,18 +10,18 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal abstract class HeroBaseClass
     {
-        public string Name { get; set; }
+        protected string Name { get; set; }
 
-        public int Level { get; set; } = 0;
-        public HeroAttribute HeroAttributes { get; set; }
+        protected int Level { get; set; } = 0;
+        protected HeroAttribute HeroAttributes { get; set; }
 
-        public Dictionary <SlotEnum,EquipmentBaseClass> Equipment { get; set; }
+        protected Dictionary <SlotEnum,EquipmentBaseClass> Equipment { get; set; }
 
-        public string ValidWeaponTypes { get;  set; }
+        protected string ValidWeaponTypes { get;  set; }
 
-        public string ValidArmorTypes { get; set; }
+        protected string ValidArmorTypes { get; set; }
 
-        public enum EquipmentTypeAllowd { }
+        protected enum EquipmentTypeAllowd { }
 
         public HeroBaseClass(string name)
         {
@@ -33,7 +33,7 @@ namespace RPG_Heroes_console_application.Heros
         }
 
         public abstract void LevelUp();
-        public abstract void Equip(EquipmentTypeAllowd Type, SlotEnum slot)
+        public void Equip(EquipmentTypeAllowd Type, SlotEnum slot)
         {
             throw new NotImplementedException();
 
