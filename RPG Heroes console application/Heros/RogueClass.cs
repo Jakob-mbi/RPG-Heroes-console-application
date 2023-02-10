@@ -45,14 +45,5 @@ namespace RPG_Heroes_console_application.Heros
             throw new NotImplementedException();
         }
 
-        public override void EquipArmor()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void EquipWepon()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

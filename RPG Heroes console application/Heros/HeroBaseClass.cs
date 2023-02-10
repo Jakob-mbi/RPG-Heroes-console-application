@@ -16,7 +16,7 @@ namespace RPG_Heroes_console_application.Heros
         protected int Level { get; set; } = 0;
         protected HeroAttribute HeroAttributes { get; set; }
 
-        protected Dictionary <SlotEnum,EquipmentBaseClass> Equipment { get; set; }
+        protected Dictionary <SlotEnum,EquipmentBaseClass?> Equipment { get; set; }
 
         protected  List<WeaponTypeEnum> ValidWeaponTypes { get; set; }
         protected  List<ArmorTypeEnum> ValidArmorTypes { get; set; }
