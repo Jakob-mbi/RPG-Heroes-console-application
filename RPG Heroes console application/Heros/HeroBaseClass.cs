@@ -31,8 +31,29 @@ namespace RPG_Heroes_console_application.Heros
         }
 
         public abstract void LevelUp();
-        public abstract void EquipArmor();
-        public abstract void EquipWepon();
+        public void EquipArmor(ArmorItemTypeClass armor)
+        {
+            if (!ValidArmorTypes.Exists(validArmor => validArmor == armor.ArmorType))
+            {
+                throw new InvalidArmorException("You can not possess this armor type");
+            }
+            if (armor.RequiredLevel > Level)
+            {
+                throw new InvalidArmorException("You are not at the requierd level for this armor");
+            }
+           
+        }
+        public void EquipWepon(WeponsItemClass wepon)
+        {
+            if (!ValidWeaponTypes.Exists(validWepon => validWepon == wepon.WeponType))
+            {
+                throw new InvalidArmorException("You can not possess this armor type");
+            }
+            if (wepon.RequiredLevel > Level)
+            {
+                throw new InvalidArmorException("You are not at the requierd level for this armor");
+            }
+        }
 
         public abstract void Damage();
         public abstract void TotalAttributes();
