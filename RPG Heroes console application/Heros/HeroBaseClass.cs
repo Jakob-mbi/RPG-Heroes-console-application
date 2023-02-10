@@ -1,4 +1,5 @@
 ﻿using RPG_Heroes_console_application.EquipmentItem;
+using RPG_Heroes_console_application.EquipmentItem.ArmorItem;
 using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,8 @@ namespace RPG_Heroes_console_application.Heros
 
         protected Dictionary <SlotEnum,EquipmentBaseClass> Equipment { get; set; }
 
-        protected string ValidWeaponTypes { get;  set; }
-
-        protected string ValidArmorTypes { get; set; }
-
-        protected enum EquipmentTypeAllowd { }
+        protected  List<WeaponTypeEnum> ValidWeaponTypes { get; set; }
+        protected  List<ArmorTypeEnum> ValidArmorTypes { get; set; }
 
         public HeroBaseClass(string name)
         {
@@ -33,11 +31,9 @@ namespace RPG_Heroes_console_application.Heros
         }
 
         public abstract void LevelUp();
-        public void Equip(EquipmentTypeAllowd Type, SlotEnum slot)
-        {
-            throw new NotImplementedException();
+        public abstract void EquipArmor();
+        public abstract void EquipWepon();
 
-        }
         public abstract void Damage();
         public abstract void TotalAttributes();
         public abstract void Display();

@@ -1,4 +1,6 @@
 ﻿using RPG_Heroes_console_application.EquipmentItem;
+using RPG_Heroes_console_application.EquipmentItem.ArmorItem;
+using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +11,16 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal class RangerClass : HeroBaseClass
     {
+
         public RangerClass(string name) : base(name)
         {
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(1, 7, 1);
+            ValidWeaponTypes.Add(WeaponTypeEnum.Bows);
+            ValidArmorTypes.Add(ArmorTypeEnum.Lether);
+            ValidArmorTypes.Add(ArmorTypeEnum.Mail);
         }
-        public enum EquipmentTypeAllowd
-        {
-            Bow,
-            Leather,
-            Mail
-        }
+        
 
         public override void Damage()
         {
@@ -42,7 +43,12 @@ namespace RPG_Heroes_console_application.Heros
             throw new NotImplementedException();
         }
 
-        public override void Equip(HeroBaseClass.EquipmentTypeAllowd Type, SlotEnum slot)
+        public override void EquipArmor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void EquipWepon()
         {
             throw new NotImplementedException();
         }

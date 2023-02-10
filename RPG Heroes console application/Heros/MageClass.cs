@@ -1,5 +1,8 @@
 ﻿using RPG_Heroes_console_application.EquipmentItem;
+using RPG_Heroes_console_application.EquipmentItem.ArmorItem;
+using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,18 +12,16 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal class MageClass : HeroBaseClass
     {
+
         public MageClass(string name) : base(name)
         {
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(1,1,8);
-
+            ValidWeaponTypes.Add(WeaponTypeEnum.Staffs);
+            ValidWeaponTypes.Add(WeaponTypeEnum.Wands);
+            ValidArmorTypes.Add(ArmorTypeEnum.Cloth);
         }
-        public enum EquipmentTypeAllowd
-        {
-            staff,
-            Wand,
-            Cloth
-        }
+        
         public override void Damage()
         {
             throw new NotImplementedException();
@@ -42,7 +43,12 @@ namespace RPG_Heroes_console_application.Heros
             throw new NotImplementedException();
         }
 
-        public override void Equip(HeroBaseClass.EquipmentTypeAllowd Type, SlotEnum slot)
+        public override void EquipArmor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void EquipWepon()
         {
             throw new NotImplementedException();
         }

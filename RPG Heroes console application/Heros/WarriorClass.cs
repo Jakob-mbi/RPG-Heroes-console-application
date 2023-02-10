@@ -1,4 +1,6 @@
 ﻿using RPG_Heroes_console_application.EquipmentItem;
+using RPG_Heroes_console_application.EquipmentItem.ArmorItem;
+using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +11,19 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal class WarriorClass : HeroBaseClass
     {
+
         public WarriorClass(string name) : base(name)
         {
             this.Name = name;
             this.HeroAttributes = new HeroAttribute(5, 2, 1);
+            ValidWeaponTypes.Add(WeaponTypeEnum.Axes);
+            ValidWeaponTypes.Add(WeaponTypeEnum.Hammers);
+            ValidWeaponTypes.Add(WeaponTypeEnum.Swords);
+            ValidArmorTypes.Add(ArmorTypeEnum.Mail);
+            ValidArmorTypes.Add(ArmorTypeEnum.Lether);
         }
 
-        public enum EquipmentTypeAllowd
-        {
-            Axe,
-            Hammer,
-            sword,
-            Mail,
-            Plate
-        }
+        
 
         public override void Damage()
         {
@@ -45,7 +46,12 @@ namespace RPG_Heroes_console_application.Heros
             throw new NotImplementedException();
         }
 
-        public override void Equip(HeroBaseClass.EquipmentTypeAllowd Type, SlotEnum slot)
+        public override void EquipArmor()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void EquipWepon()
         {
             throw new NotImplementedException();
         }
