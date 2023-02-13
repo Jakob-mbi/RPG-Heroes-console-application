@@ -12,20 +12,17 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal class MageClass : HeroBaseClass
     {
+        protected override HeroAttribute HeroAttributes { get; set; }
 
         public MageClass(string name) : base(name)
         {
-            this.Name = name;
-            Equipment.Add(SlotEnum.Wepon, value: null);
-            Equipment.Add(SlotEnum.Legs, value: null);
-            Equipment.Add(SlotEnum.Head, value: null);
-            Equipment.Add(SlotEnum.Body, value: null);
-            this.HeroAttributes = new HeroAttribute(1,1,8);
+            HeroAttributes = new HeroAttribute(1, 1, 8);
             ValidWeaponTypes.Add(WeaponTypeEnum.Staffs);
             ValidWeaponTypes.Add(WeaponTypeEnum.Wands);
             ValidArmorTypes.Add(ArmorTypeEnum.Cloth);
         }
-        
+
+       
         public override void Damage()
         {
             throw new NotImplementedException();
@@ -42,10 +39,7 @@ namespace RPG_Heroes_console_application.Heros
             HeroAttributes.LevelUpAttribtues(1, 1, 5);
         }
 
-        public override void TotalAttributes()
-        {
-            throw new NotImplementedException();
-        }
+       
 
     }
 }

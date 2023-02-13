@@ -11,7 +11,7 @@ namespace RPG_Heroes_console_application.EquipmentItem
     {
         protected string Name { get; set; }
         public int RequiredLevel { get; protected set; }
-        protected SlotEnum Slot { get; set; }
+        public SlotEnum Slot { get; protected set; }
 
         public EquipmentBaseClass(string name, int requiredLevel, SlotEnum slot)
         {
