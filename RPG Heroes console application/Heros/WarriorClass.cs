@@ -15,6 +15,10 @@ namespace RPG_Heroes_console_application.Heros
         public WarriorClass(string name) : base(name)
         {
             this.Name = name;
+            Equipment.Add(SlotEnum.Wepon, value: null);
+            Equipment.Add(SlotEnum.Legs, value: null);
+            Equipment.Add(SlotEnum.Head, value: null);
+            Equipment.Add(SlotEnum.Body, value: null);
             this.HeroAttributes = new HeroAttribute(5, 2, 1);
             ValidWeaponTypes.Add(WeaponTypeEnum.Axes);
             ValidWeaponTypes.Add(WeaponTypeEnum.Hammers);

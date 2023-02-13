@@ -15,6 +15,10 @@ namespace RPG_Heroes_console_application.Heros
         public RogueClass(string name) : base(name)
         {
             this.Name = name;
+            Equipment.Add(SlotEnum.Wepon, value: null);
+            Equipment.Add(SlotEnum.Legs, value: null);
+            Equipment.Add(SlotEnum.Head, value: null);
+            Equipment.Add(SlotEnum.Body, value: null);
             this.HeroAttributes = new HeroAttribute(2, 6, 1);
             ValidWeaponTypes.Add(WeaponTypeEnum.Daggers);
             ValidWeaponTypes.Add(WeaponTypeEnum.Swords);

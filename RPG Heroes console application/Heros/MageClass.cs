@@ -16,6 +16,10 @@ namespace RPG_Heroes_console_application.Heros
         public MageClass(string name) : base(name)
         {
             this.Name = name;
+            Equipment.Add(SlotEnum.Wepon, value: null);
+            Equipment.Add(SlotEnum.Legs, value: null);
+            Equipment.Add(SlotEnum.Head, value: null);
+            Equipment.Add(SlotEnum.Body, value: null);
             this.HeroAttributes = new HeroAttribute(1,1,8);
             ValidWeaponTypes.Add(WeaponTypeEnum.Staffs);
             ValidWeaponTypes.Add(WeaponTypeEnum.Wands);

@@ -24,10 +24,6 @@ namespace RPG_Heroes_console_application.Heros
         public HeroBaseClass(string name)
         {
             this.Name = name;
-            Equipment.Add(SlotEnum.Wepon, value: null);
-            Equipment.Add(SlotEnum.Legs, value: null);
-            Equipment.Add(SlotEnum.Head, value: null);
-            Equipment.Add(SlotEnum.Body, value: null);
         }
 
         public abstract void LevelUp();
