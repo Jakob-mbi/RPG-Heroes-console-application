@@ -15,12 +15,8 @@ namespace RPG_Heroes_console_application.EquipmentItem.ArmorItem
 
         public ArmorItemTypeClass(string name, SlotEnum slot, int requiredLevel, ArmorTypeEnum armorType, int armorAttribute) : base(name, requiredLevel, slot)
         {
-            Name = name;
-            RequiredLevel = requiredLevel;
-            Slot = slot;
             ArmorType = armorType;
             ArmorAttribute = armorAttribute;
-
         }
 
     }

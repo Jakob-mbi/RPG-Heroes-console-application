@@ -16,9 +16,6 @@ namespace RPG_Heroes_console_application.EquipmentItem.WeponsItem
 
         public WeponsItemClass(string name, int requiredLevel, WeaponTypeEnum weponType, int weaponDamage, SlotEnum slot) : base(name, requiredLevel, slot)
         {
-            this.Name = name;
-            RequiredLevel = requiredLevel;
-            Slot = SlotEnum.Wepon;
             WeponType = weponType;
             WeaponDamage = weaponDamage;
         }
