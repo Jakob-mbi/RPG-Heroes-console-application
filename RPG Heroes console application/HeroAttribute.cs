@@ -11,16 +11,7 @@ namespace RPG_Heroes_console_application
         public int Strength { get; private set; }
         public int Dexterity { get; private set; }
         public int Intelligence { get; private set; }
-
-
-
-
-        public HeroAttribute(int strength, int dexterity, int intelligence)
-        {
-            this.Strength = strength;
-            Dexterity = dexterity;
-            Intelligence = intelligence;
-        }
+    
 
         public void LevelUpAttribtues(int strength, int dexterity, int intelligence)
         {
@@ -33,6 +24,12 @@ namespace RPG_Heroes_console_application
             int sum = Strength+Dexterity+Intelligence;
 
             return sum;
+        }
+        public void InitialAttributes(int strength, int dexterity, int intelligence)
+        {
+            this.Strength = strength;
+            Dexterity = dexterity;
+            Intelligence = intelligence;
         }
 
 

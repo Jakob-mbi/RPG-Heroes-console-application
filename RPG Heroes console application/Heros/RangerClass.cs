@@ -11,11 +11,12 @@ namespace RPG_Heroes_console_application.Heros
 {
     internal class RangerClass : HeroBaseClass
     {
-        protected override HeroAttribute HeroAttributes { get; set; }
+      
 
         public RangerClass(string name) : base(name)
         {
-            this.HeroAttributes = new HeroAttribute(1, 7, 1);
+            ClassOfHero = typeof(RangerClass).ToString();
+            HeroAttributes.InitialAttributes(1, 7, 1);
             ValidWeaponTypes.Add(WeaponTypeEnum.Bows);
             ValidArmorTypes.Add(ArmorTypeEnum.Lether);
             ValidArmorTypes.Add(ArmorTypeEnum.Mail);
@@ -23,14 +24,22 @@ namespace RPG_Heroes_console_application.Heros
 
         
 
-        public override void Damage()
+        public override int Damage()
         {
-            throw new NotImplementedException();
-        }
+            int totalDamage = 0;
 
-        public override void Display()
-        {
-            throw new NotImplementedException();
+            if (Equipment[SlotEnum.Wepon] is WeponsItemClass)
+            {
+                WeponsItemClass? wepon = (WeponsItemClass?)Equipment[SlotEnum.Wepon];
+                totalDamage += wepon.WeaponDamage;
+                totalDamage *= (1 + HeroAttributes.Dexterity / 100);
+            }
+            else
+            {
+                totalDamage = 1;
+            }
+
+            return totalDamage;
         }
 
         public override void LevelUp()

@@ -14,29 +14,27 @@ namespace RPG_Heroes_console_application.Heros
     {
         protected string Name { get; set; }
 
+        protected string ClassOfHero { get; set; }
+
         protected int Level { get; set; } = 0;
-        protected abstract HeroAttribute HeroAttributes { get; set; }
+        protected HeroAttribute HeroAttributes { get; set; } = new HeroAttribute();
 
-        protected Dictionary <SlotEnum,EquipmentBaseClass?> Equipment { get; set; }
+        protected Dictionary <SlotEnum,EquipmentBaseClass?> Equipment { get; set; } = new Dictionary<SlotEnum, EquipmentBaseClass?>();
 
-        protected  List<WeaponTypeEnum> ValidWeaponTypes { get; set; }
-        protected  List<ArmorTypeEnum> ValidArmorTypes { get; set; }
+        protected  List<WeaponTypeEnum> ValidWeaponTypes { get; set; } = new List<WeaponTypeEnum>();
+        protected  List<ArmorTypeEnum> ValidArmorTypes { get; set; } = new List<ArmorTypeEnum>();
 
         public HeroBaseClass(string name)
         {
             this.Name = name;
-            ValidWeaponTypes = new List<WeaponTypeEnum>();
-            ValidArmorTypes = new List<ArmorTypeEnum>();
-            Equipment = new Dictionary<SlotEnum, EquipmentBaseClass?>();
             Equipment.Add(SlotEnum.Wepon, value: null);
             Equipment.Add(SlotEnum.Legs, value: null);
             Equipment.Add(SlotEnum.Head, value: null);
-            Equipment.Add(SlotEnum.Body, value: null);
-                    
+            Equipment.Add(SlotEnum.Body, value: null);           
         }
 
         public abstract void LevelUp();
-        public void EquipArmor(ArmorItemTypeClass armor)
+        public virtual void EquipArmor(ArmorItemTypeClass armor)
         {
             if (!ValidArmorTypes.Exists(validArmor => validArmor == armor.ArmorType))
             {
@@ -52,7 +50,7 @@ namespace RPG_Heroes_console_application.Heros
             }
   
         }
-        public void EquipWepon(WeponsItemClass wepon)
+        public virtual void EquipWepon(WeponsItemClass wepon)
         {
             if (!ValidWeaponTypes.Exists(validWepon => validWepon == wepon.WeponType))
             {
@@ -69,8 +67,8 @@ namespace RPG_Heroes_console_application.Heros
 
         }
 
-        public abstract void Damage();
-        public void TotalAttributes()
+        public abstract int Damage();
+        public virtual void TotalAttributes()
         {
             int totalAttribute = HeroAttributes.AttribtuesSum();
 
@@ -85,7 +83,19 @@ namespace RPG_Heroes_console_application.Heros
             }
 
         }
-        public abstract void Display();
+        public virtual string Display()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Name);
+            sb.AppendLine($"{ClassOfHero}");
+            sb.AppendLine($"Strength:{HeroAttributes.Strength}");
+            sb.AppendLine($"Dexterity:{HeroAttributes.Dexterity}");
+            sb.AppendLine($"Inteligence:{HeroAttributes.Intelligence}");
+            sb.AppendLine($"Total damage:{Damage()}");
+            
+
+            return sb.ToString();
+        }
 
     }
 }
