@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RPG_Heroes_console_application.EquipmentItem;
+using RPG_Heroes_console_application.Equipment;
 
-namespace RPG_Heroes_console_application.EquipmentItem
+namespace RPG_Heroes_console_application.Equipment
 {
-    internal abstract class EquipmentBaseClass
+    public abstract class EquipmentBaseClass
     {
-        protected string Name { get; set; }
+        public  string Name { get; protected set; }
         public int RequiredLevel { get; protected set; }
         public SlotEnum Slot { get; protected set; }
 

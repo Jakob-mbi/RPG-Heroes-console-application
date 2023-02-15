@@ -1,4 +1,4 @@
-﻿using RPG_Heroes_console_application.Heros;
+﻿using RPG_Heroes_console_application.HeroModels;
 
 namespace RPG_Heroes_console_application
 {

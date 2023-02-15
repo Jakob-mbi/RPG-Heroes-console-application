@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes_console_application.EquipmentItem.WeponsItem
+namespace RPG_Heroes_console_application.Equipment.Wepons
 {
     internal class InvalidWeaponException :Exception
     {

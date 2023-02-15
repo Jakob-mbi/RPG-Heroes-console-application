@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes_console_application.EquipmentItem.ArmorItem
+namespace RPG_Heroes_console_application.Equipment.Armor
 {
     internal class InvalidArmorException : Exception
     {

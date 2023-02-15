@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes_console_application
 {
-    internal class HeroAttribute
+    public class Attributes
     {
         public int Strength { get; private set; }
         public int Dexterity { get; private set; }
         public int Intelligence { get; private set; }
     
-
+        public Attributes() { }
+        public Attributes(int strength,int dexterity,int intelligence) 
+        { 
+            Strength = strength;
+            Dexterity = dexterity;
+            Intelligence = intelligence;
+        }  
         public void LevelUpAttribtues(int strength, int dexterity, int intelligence)
         {
             this.Strength += strength;

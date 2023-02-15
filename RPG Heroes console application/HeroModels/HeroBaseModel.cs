@@ -1,6 +1,7 @@
-﻿using RPG_Heroes_console_application.EquipmentItem;
-using RPG_Heroes_console_application.EquipmentItem.ArmorItem;
-using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
+﻿
+using RPG_Heroes_console_application.Equipment;
+using RPG_Heroes_console_application.Equipment.Armor;
+using RPG_Heroes_console_application.Equipment.Wepons;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,23 +9,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes_console_application.Heros
+namespace RPG_Heroes_console_application.HeroModels
 {
-    internal abstract class HeroBaseClass
+    public abstract class HeroBaseModel
     {
-        protected string Name { get; set; }
+        public string Name { get; protected set; }
 
-        protected string ClassOfHero { get; set; }
+        public string ClassOfHero { get; protected set; }
 
-        protected int Level { get; set; } = 0;
-        protected HeroAttribute HeroAttributes { get; set; } = new HeroAttribute();
+        public int Level { get; protected set; } = 0;
+        public Attributes HeroAttributes { get; protected set; } = new Attributes();
 
-        protected Dictionary <SlotEnum,EquipmentBaseClass?> Equipment { get; set; } = new Dictionary<SlotEnum, EquipmentBaseClass?>();
+        public Dictionary <SlotEnum,EquipmentBaseClass?> Equipment { get; protected set; } = new Dictionary<SlotEnum, EquipmentBaseClass?>();
 
-        protected  List<WeaponTypeEnum> ValidWeaponTypes { get; set; } = new List<WeaponTypeEnum>();
-        protected  List<ArmorTypeEnum> ValidArmorTypes { get; set; } = new List<ArmorTypeEnum>();
+        public  List<WeaponTypesEnum> ValidWeaponTypes { get; protected set; } = new List<WeaponTypesEnum>();
+        public  List<ArmorTypesEnum> ValidArmorTypes { get; protected set; } = new List<ArmorTypesEnum>();
 
-        public HeroBaseClass(string name)
+        public HeroBaseModel(string name)
         {
             this.Name = name;
             Equipment.Add(SlotEnum.Wepon, value: null);
@@ -34,7 +35,7 @@ namespace RPG_Heroes_console_application.Heros
         }
 
         public abstract void LevelUp();
-        public virtual void EquipArmor(ArmorItemTypeClass armor)
+        public virtual void EquipArmor(ArmorModel armor)
         {
             if (!ValidArmorTypes.Exists(validArmor => validArmor == armor.ArmorType))
             {
@@ -50,7 +51,7 @@ namespace RPG_Heroes_console_application.Heros
             }
   
         }
-        public virtual void EquipWepon(WeponsItemClass wepon)
+        public virtual void EquipWepon(WeponModel wepon)
         {
             if (!ValidWeaponTypes.Exists(validWepon => validWepon == wepon.WeponType))
             {
@@ -75,10 +76,10 @@ namespace RPG_Heroes_console_application.Heros
 
             foreach (KeyValuePair<SlotEnum, EquipmentBaseClass?> armor in Equipment)
             {
-                if (armor.Value is ArmorItemTypeClass)
+                if (armor.Value is ArmorModel)
                 {
-                    ArmorItemTypeClass childClass = (ArmorItemTypeClass)armor.Value;
-                    totalAttribute += childClass.ArmorAttribute;
+                    ArmorModel childClass = (ArmorModel)armor.Value;
+                    totalAttribute += childClass.ArmorAttribute.AttribtuesSum();
                 }
             }
 

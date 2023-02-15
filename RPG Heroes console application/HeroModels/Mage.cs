@@ -1,6 +1,6 @@
-﻿using RPG_Heroes_console_application.EquipmentItem;
-using RPG_Heroes_console_application.EquipmentItem.ArmorItem;
-using RPG_Heroes_console_application.EquipmentItem.WeponsItem;
+﻿using RPG_Heroes_console_application.Equipment;
+using RPG_Heroes_console_application.Equipment.Armor;
+using RPG_Heroes_console_application.Equipment.Wepons;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,19 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes_console_application.Heros
+namespace RPG_Heroes_console_application.HeroModels
 {
-    internal class MageClass : HeroBaseClass
+    public class Mage : HeroBaseModel
     {
        
 
-        public MageClass(string name) : base(name)
+        public Mage(string name) : base(name)
         {
-            ClassOfHero = typeof(MageClass).ToString();
+            ClassOfHero = typeof(Mage).ToString();
             HeroAttributes.InitialAttributes(1, 1, 8);          
-            ValidWeaponTypes.Add(WeaponTypeEnum.Staffs);
-            ValidWeaponTypes.Add(WeaponTypeEnum.Wands);
-            ValidArmorTypes.Add(ArmorTypeEnum.Cloth);
+            ValidWeaponTypes.Add(WeaponTypesEnum.Staffs);
+            ValidWeaponTypes.Add(WeaponTypesEnum.Wands);
+            ValidArmorTypes.Add(ArmorTypesEnum.Cloth);
         }
 
        
@@ -28,9 +28,9 @@ namespace RPG_Heroes_console_application.Heros
         {
             int totalDamage = 0;
    
-            if (Equipment[SlotEnum.Wepon] is WeponsItemClass)
+            if (Equipment[SlotEnum.Wepon] is WeponModel)
             {
-                WeponsItemClass? wepon = (WeponsItemClass?) Equipment[SlotEnum.Wepon];
+                WeponModel? wepon = (WeponModel?) Equipment[SlotEnum.Wepon];
                 totalDamage += wepon.WeaponDamage;
                 totalDamage *= (1 + HeroAttributes.Intelligence / 100); 
             }
