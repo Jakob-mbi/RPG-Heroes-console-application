@@ -23,21 +23,21 @@ namespace RPG_Heroes_console_application.HeroModels
         }
 
 
-        public override int Damage()
+        public override double Damage()
         {
-            int totalDamage = 0;
+            double totalDamage = 0;
 
             if (Equipment[SlotEnum.Wepon] is WeponModel)
             {
                 WeponModel? wepon = (WeponModel?)Equipment[SlotEnum.Wepon];
                 totalDamage += wepon.WeaponDamage;
-                totalDamage *= (1 + HeroAttributes.Dexterity/ 100);
+
             }
             else
             {
                 totalDamage = 1;
             }
-
+            totalDamage *= (1.0 + Convert.ToDouble(HeroAttributes.Dexterity) / 100.0);
             return totalDamage;
         }
 

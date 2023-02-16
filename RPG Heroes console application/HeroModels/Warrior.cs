@@ -23,25 +23,25 @@ namespace RPG_Heroes_console_application.HeroModels
             ValidWeaponTypes.Add(WeaponTypesEnum.Hammers);
             ValidWeaponTypes.Add(WeaponTypesEnum.Swords);
             ValidArmorTypes.Add(ArmorTypesEnum.Mail);
-            ValidArmorTypes.Add(ArmorTypesEnum.Lether);
+            ValidArmorTypes.Add(ArmorTypesEnum.Plate);
         }
 
         
 
-        public override int Damage()
+        public override double Damage()
         {
-            int totalDamage = 0;
+            double totalDamage = 0;
 
             if (Equipment[SlotEnum.Wepon] is WeponModel)
             {
-                WeponModel? wepon = (WeponModel?)Equipment[SlotEnum.Wepon];
+                WeponModel wepon = (WeponModel)Equipment[SlotEnum.Wepon];
                 totalDamage += wepon.WeaponDamage;
-                totalDamage *= (1 + HeroAttributes.Strength / 100);
             }
             else
             {
                 totalDamage = 1;
             }
+            totalDamage *= (1.0 + Convert.ToDouble(HeroAttributes.Strength) / 100.0);
             return totalDamage;
         }
 
