@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes_console_application.Equipment.Wepons
 {
-    internal class InvalidWeaponException :Exception
+    public class InvalidWeaponException :Exception
     {
          public InvalidWeaponException() { }
          public InvalidWeaponException(string message) : base(message) { }

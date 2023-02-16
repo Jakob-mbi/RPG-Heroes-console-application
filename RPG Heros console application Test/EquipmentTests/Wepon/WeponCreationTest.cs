@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace RPG_Heros_console_application_Test.CreateEquipmentTests
+namespace RPG_Heros_console_application_Test.EquipmentTests.Wepon
 {
     public class WeponCreationTest
     {

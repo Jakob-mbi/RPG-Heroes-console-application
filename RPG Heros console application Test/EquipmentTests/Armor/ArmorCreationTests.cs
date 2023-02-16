@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Xunit.Abstractions;
 
-namespace RPG_Heros_console_application_Test.CreateEquipmentTests
+namespace RPG_Heros_console_application_Test.EquipmentTests.Armor
 {
     public class ArmorCreationTests
     {
-        ArmorModel equipment = new ArmorModel("Common Plate Chest",SlotEnum.Body,1,ArmorTypesEnum.Plate, new Attributes(1, 0, 0));
+        ArmorModel equipment = new ArmorModel("Common Plate Chest", SlotEnum.Body, 1, ArmorTypesEnum.Plate, new Attributes(1, 0, 0));
         [Fact]
         public void Name_GetName_ShouldReturnCorrectName()
         {
@@ -59,9 +59,9 @@ namespace RPG_Heros_console_application_Test.CreateEquipmentTests
         public void ArmorAttribute_GetArmorAttributes_ShouldReturnCorrectArmorAttribute()
         {
             //Arrange
-            int[] expected = {1,0,0};
+            int[] expected = { 1, 0, 0 };
             //act
-            int[] actual = {equipment.ArmorAttribute.Strength,equipment.ArmorAttribute.Dexterity,equipment.ArmorAttribute.Intelligence};
+            int[] actual = { equipment.ArmorAttribute.Strength, equipment.ArmorAttribute.Dexterity, equipment.ArmorAttribute.Intelligence };
             //Assert
             Assert.Equal(expected, actual);
         }
