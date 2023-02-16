@@ -8,7 +8,7 @@ using RPG_Heroes_console_application.Equipment.Armor;
 
 namespace RPG_Heroes_console_application.Equipment.Armor
 {
-    public class ArmorModel : EquipmentBaseClass
+    public class ArmorModel : EquipmentBaseModel
     {
         public Attributes ArmorAttribute { get; private set; }
         public ArmorTypesEnum ArmorType { get; private set; }

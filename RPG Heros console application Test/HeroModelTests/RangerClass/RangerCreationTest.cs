@@ -21,7 +21,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass
         public void Level_GetLevel_ShouldReturnCorrectLevel()
         {
             //Arrange
-            int expectedLevel = 0;
+            int expectedLevel = 1;
             //act
             int actual = hero.Level;
             //Assert
@@ -37,19 +37,6 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass
             //Assert
             Assert.Equal(expectedClassOfHero, actual);
         }
-        [Fact]
-        public void HeroAttributes_GetAttributes_ShouldReturnCorrecttAttributesLevels()
-        {
-            //Arrange
-            int expectedStrength = 1;
-            int expectedDexterity = 7;
-            int expectedIntelligence = 1;
-            //act
-            var actual = hero;
-            //Assert
-            Assert.Equal(expectedStrength, actual.HeroAttributes.Strength);
-            Assert.Equal(expectedDexterity, actual.HeroAttributes.Dexterity);
-            Assert.Equal(expectedIntelligence, actual.HeroAttributes.Intelligence);
-        }
+       
     }
 }

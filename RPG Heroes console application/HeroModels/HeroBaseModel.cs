@@ -17,10 +17,10 @@ namespace RPG_Heroes_console_application.HeroModels
 
         public string ClassOfHero { get; protected set; }
 
-        public int Level { get; protected set; } = 0;
+        public int Level { get; protected set; } = 1;
         public Attributes HeroAttributes { get; protected set; } = new Attributes();
 
-        public Dictionary <SlotEnum,EquipmentBaseClass?> Equipment { get; protected set; } = new Dictionary<SlotEnum, EquipmentBaseClass?>();
+        public Dictionary <SlotEnum,EquipmentBaseModel?> Equipment { get; protected set; } = new Dictionary<SlotEnum, EquipmentBaseModel?>();
 
         public  List<WeaponTypesEnum> ValidWeaponTypes { get; protected set; } = new List<WeaponTypesEnum>();
         public  List<ArmorTypesEnum> ValidArmorTypes { get; protected set; } = new List<ArmorTypesEnum>();
@@ -74,7 +74,7 @@ namespace RPG_Heroes_console_application.HeroModels
             int totalAttribute = HeroAttributes.AttribtuesSum();
 
 
-            foreach (KeyValuePair<SlotEnum, EquipmentBaseClass?> armor in Equipment)
+            foreach (KeyValuePair<SlotEnum, EquipmentBaseModel?> armor in Equipment)
             {
                 if (armor.Value is ArmorModel)
                 {

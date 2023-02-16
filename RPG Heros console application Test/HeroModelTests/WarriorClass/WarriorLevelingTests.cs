@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heros_console_application_Test.HeroModelTests.RogueClass
+namespace RPG_Heros_console_application_Test.HeroModelTests.WarriorClass
 {
     public class WarriorLevelingTests
     {
@@ -15,7 +15,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RogueClass
         public void LevelUp_IncreseLevel_ShouldReturnCorrectlyIncrementedLevel()
         {
             //Arrange
-            int expectedLevel = 1;
+            int expectedLevel = 2;
             hero.LevelUp();
             //act 
             int actual = hero.Level;

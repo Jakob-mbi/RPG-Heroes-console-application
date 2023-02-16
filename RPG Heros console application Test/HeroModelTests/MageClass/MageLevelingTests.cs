@@ -16,7 +16,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass
         public void LevelUp_IncreseLevel_ShouldReturnCorrectlyIncrementedLevel()
         {
             //Arrange
-            int expectedLevel = 1;
+            int expectedLevel = 2;
             hero.LevelUp();
             //act 
             int actual = hero.Level;

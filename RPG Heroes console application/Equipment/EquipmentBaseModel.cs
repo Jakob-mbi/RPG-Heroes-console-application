@@ -7,13 +7,13 @@ using RPG_Heroes_console_application.Equipment;
 
 namespace RPG_Heroes_console_application.Equipment
 {
-    public abstract class EquipmentBaseClass
+    public abstract class EquipmentBaseModel
     {
         public  string Name { get; protected set; }
         public int RequiredLevel { get; protected set; }
         public SlotEnum Slot { get; protected set; }
 
-        public EquipmentBaseClass(string name, int requiredLevel, SlotEnum slot)
+        public EquipmentBaseModel(string name, int requiredLevel, SlotEnum slot)
         {
             Name = name;
             RequiredLevel = requiredLevel;

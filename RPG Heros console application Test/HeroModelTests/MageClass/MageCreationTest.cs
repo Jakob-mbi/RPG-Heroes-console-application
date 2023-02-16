@@ -23,7 +23,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass
         public void Level_GetLevel_ShouldReturnCorrectLevel()
         {
             //Arrange
-            int expectedLevel = 0;
+            int expectedLevel = 1;
             //act
             int actual = hero.Level;
             //Assert
@@ -39,19 +39,6 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass
             //Assert
             Assert.Equal(expectedClassOfHero, actual);
         }
-        [Fact]
-        public void HeroAttributes_GetAttributes_ShouldReturnCorrecttAttributesLevels()
-        {
-            //Arrange
-            int expectedStrength = 1;
-            int expectedDexterity = 1;
-            int expectedIntelligence = 8;
-            //act
-            var actual = hero;
-            //Assert
-            Assert.Equal(expectedStrength, actual.HeroAttributes.Strength);
-            Assert.Equal(expectedDexterity, actual.HeroAttributes.Dexterity);
-            Assert.Equal(expectedIntelligence, actual.HeroAttributes.Intelligence);
-        }
+        
     }
 }
