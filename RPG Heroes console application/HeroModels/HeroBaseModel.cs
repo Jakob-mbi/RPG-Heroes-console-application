@@ -69,9 +69,9 @@ namespace RPG_Heroes_console_application.HeroModels
         }
 
         public abstract double Damage();
-        public virtual int TotalAttributes()
+        public virtual Attributes TotalAttributes()
         {
-            int totalAttribute = HeroAttributes.AttribtuesSum();
+            Attributes Total = new Attributes(HeroAttributes.Strength,HeroAttributes.Dexterity,HeroAttributes.Intelligence);
 
 
             foreach (KeyValuePair<SlotEnum, EquipmentBaseModel?> armor in Equipment)
@@ -79,19 +79,19 @@ namespace RPG_Heroes_console_application.HeroModels
                 if (armor.Value is ArmorModel)
                 {
                     ArmorModel childClass = (ArmorModel)armor.Value;
-                    totalAttribute += childClass.ArmorAttribute.AttribtuesSum();
+                    Total.LevelUpAttribtues(childClass.ArmorAttribute.Strength,childClass.ArmorAttribute.Dexterity,childClass.ArmorAttribute.Intelligence);
                 }
             }
-            return totalAttribute;
+            return Total;
         }
         public virtual string Display()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(Name);
             sb.AppendLine($"{ClassOfHero}");
-            sb.AppendLine($"Strength:{HeroAttributes.Strength}");
-            sb.AppendLine($"Dexterity:{HeroAttributes.Dexterity}");
-            sb.AppendLine($"Inteligence:{HeroAttributes.Intelligence}");
+            sb.AppendLine($"Strength:{TotalAttributes().Strength}");
+            sb.AppendLine($"Dexterity:{TotalAttributes().Dexterity}");
+            sb.AppendLine($"Inteligence:{TotalAttributes().Intelligence}");
             sb.AppendLine($"Total damage:{Damage()}");
             
 

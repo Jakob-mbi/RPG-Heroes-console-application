@@ -25,10 +25,9 @@ namespace RPG_Heroes_console_application
             Dexterity += dexterity;
             Intelligence += intelligence;
         }
-        public int AttribtuesSum()
+        public int[] AttribtuesSumArray()
         {
-            int sum = Strength+Dexterity+Intelligence;
-
+            int[] sum = {Strength, Dexterity, Intelligence };
             return sum;
         }
         public void InitialAttributes(int strength, int dexterity, int intelligence)
