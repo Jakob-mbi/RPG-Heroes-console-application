@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass
 {
-    public class RogueAttribteTest
+    public class MageAttribteTest
     {
         Mage hero = new Mage("Jerry");
 

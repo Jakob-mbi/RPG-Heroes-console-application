@@ -26,17 +26,12 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass
         public void LevelUp_IncreseHeroAttributes_ShouldReturnCorrectlyIncrementedAttributes()
         {
             //Arrange
-            int expectedStrength = 2;
-            int expectedDexterity = 12;
-            int expectedIntelligence = 2;
+            int[] expected = { 2, 12, 2 };
             hero.LevelUp();
             //act 
-            var actual = hero;
+            int[] actual = { hero.HeroAttributes.Strength, hero.HeroAttributes.Dexterity, hero.HeroAttributes.Intelligence };
             //Assert
-            //Assert
-            Assert.Equal(expectedStrength, actual.HeroAttributes.Strength);
-            Assert.Equal(expectedDexterity, actual.HeroAttributes.Dexterity);
-            Assert.Equal(expectedIntelligence, actual.HeroAttributes.Intelligence);
+            Assert.Equal(expected, actual);
         }
     }
 }

@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using RPG_Heroes_console_application.Equipment.Wepons;
 
-namespace RPG_Heros_console_application_Test.EquipmentTests.Wepon
+namespace RPG_Heros_console_application_Test.HeroModelTests.RogueClass.HeroWeponTest
 {
     public class EquipWeponTest
     {
-        Mage hero = new Mage("Jerry");
+        Rogue hero = new Rogue("Jerry");
 
         [Fact]
         public void EquipWepon_EquipInvalidWeponType_ShouldThrowInvalidWeponException()
@@ -27,7 +27,7 @@ namespace RPG_Heros_console_application_Test.EquipmentTests.Wepon
         public void EquipWepon_EquipWeponWithHigherRequiredLevel_ShouldThrowInvalidWeponException()
         {
             //Arrange
-            WeponModel equipment = new WeponModel("Common staff", 2, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Dagger", 2, WeaponTypesEnum.Daggers, 2, SlotEnum.Wepon);
             // Act & Assert
             Assert.Throws<InvalidWeaponException>(() => hero.EquipWepon(equipment));
         }
@@ -35,7 +35,7 @@ namespace RPG_Heros_console_application_Test.EquipmentTests.Wepon
         public void EquipWepon_EquipWepon_ShouldbeInEquipmentDictionary()
         {
             //Arrange
-            WeponModel equipment = new WeponModel("Common Staff", 1, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Dagger", 1, WeaponTypesEnum.Daggers, 2, SlotEnum.Wepon);
             hero.EquipWepon(equipment);
             WeponModel expected = equipment;
 
