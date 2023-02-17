@@ -32,7 +32,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass.HeroWeponT
         {
             //Arrange
             double expected = 2.16;
-            WeponModel equipment = new WeponModel("Common staff", 1, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common staff", 1, WeaponTypesEnum.Staffs, 2);
             hero.EquipWepon(equipment);
             //act
             double actual = hero.Damage();
@@ -44,10 +44,10 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass.HeroWeponT
         {
             //Arrange
             double[] expected = { 2.16,3.24 };
-            WeponModel equipment = new WeponModel("Common staff", 1, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common staff", 1, WeaponTypesEnum.Staffs, 2);
             hero.EquipWepon(equipment);
             double first = hero.Damage();
-            WeponModel equipment2 = new WeponModel("Super staff", 1, WeaponTypesEnum.Staffs, 3, SlotEnum.Wepon);
+            WeponModel equipment2 = new WeponModel("Super staff", 1, WeaponTypesEnum.Staffs, 3);
             hero.EquipWepon(equipment2);
             double second = hero.Damage();
             //act
@@ -60,7 +60,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass.HeroWeponT
         {
             //Arrange
             double expected = 2.2;
-            WeponModel equipment = new WeponModel("Common staff", 1, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common staff", 1, WeaponTypesEnum.Staffs, 2);
             ArmorModel equipment2 = new ArmorModel("Common cloth",SlotEnum.Body,1,ArmorTypesEnum.Cloth, new Attributes(0, 0, 2));
             hero.EquipWepon(equipment);
             hero.EquipArmor(equipment2);

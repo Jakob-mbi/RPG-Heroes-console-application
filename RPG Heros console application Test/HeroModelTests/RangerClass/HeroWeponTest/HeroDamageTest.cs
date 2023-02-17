@@ -32,7 +32,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass.HeroWepo
         {
             //Arrange
             double expected = 2.14;
-            WeponModel equipment = new WeponModel("Common Bow", 1, WeaponTypesEnum.Bows, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Bow", 1, WeaponTypesEnum.Bows, 2);
             hero.EquipWepon(equipment);
             //act
             double actual = hero.Damage();
@@ -44,10 +44,10 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass.HeroWepo
         {
             //Arrange
             double[] expected = { 2.14, 3.21 };
-            WeponModel equipment = new WeponModel("Common Bow", 1, WeaponTypesEnum.Bows, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Bow", 1, WeaponTypesEnum.Bows, 2);
             hero.EquipWepon(equipment);
             double first = hero.Damage();
-            WeponModel equipment2 = new WeponModel("Super Bow", 1, WeaponTypesEnum.Bows, 3, SlotEnum.Wepon);
+            WeponModel equipment2 = new WeponModel("Super Bow", 1, WeaponTypesEnum.Bows, 3);
             hero.EquipWepon(equipment2);
             double second = hero.Damage();
             //act
@@ -60,7 +60,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass.HeroWepo
         {
             //Arrange
             double expected = 2.18;
-            WeponModel equipment = new WeponModel("Common Bow", 1, WeaponTypesEnum.Bows, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Bow", 1, WeaponTypesEnum.Bows, 2);
             ArmorModel equipment2 = new ArmorModel("Common Mail Chest", SlotEnum.Body, 1, ArmorTypesEnum.Mail, new Attributes(0, 2, 0));
             hero.EquipWepon(equipment);
             hero.EquipArmor(equipment2);

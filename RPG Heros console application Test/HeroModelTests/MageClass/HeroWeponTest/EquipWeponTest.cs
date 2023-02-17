@@ -19,7 +19,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass.HeroWeponT
         public void EquipWepon_EquipInvalidWeponType_ShouldThrowInvalidWeponException()
         {
             //Arrange
-            WeponModel equipment = new WeponModel("Common Axe", 1, WeaponTypesEnum.Axes, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Axe", 1, WeaponTypesEnum.Axes, 2);
             // Act & Assert
             Assert.Throws<InvalidWeaponException>(() => hero.EquipWepon(equipment));
         }
@@ -27,7 +27,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass.HeroWeponT
         public void EquipWepon_EquipWeponWithHigherRequiredLevel_ShouldThrowInvalidWeponException()
         {
             //Arrange
-            WeponModel equipment = new WeponModel("Common staff", 2, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common staff", 2, WeaponTypesEnum.Staffs, 2);
             // Act & Assert
             Assert.Throws<InvalidWeaponException>(() => hero.EquipWepon(equipment));
         }
@@ -35,7 +35,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass.HeroWeponT
         public void EquipWepon_EquipWepon_ShouldbeInEquipmentDictionary()
         {
             //Arrange
-            WeponModel equipment = new WeponModel("Common Staff", 1, WeaponTypesEnum.Staffs, 2, SlotEnum.Wepon);
+            WeponModel equipment = new WeponModel("Common Staff", 1, WeaponTypesEnum.Staffs, 2);
             hero.EquipWepon(equipment);
             WeponModel expected = equipment;
 

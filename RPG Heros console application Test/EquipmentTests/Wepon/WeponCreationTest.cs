@@ -12,7 +12,7 @@ namespace RPG_Heros_console_application_Test.EquipmentTests.Wepon
 {
     public class WeponCreationTest
     {
-        WeponModel equipment = new WeponModel("Common Axe", 1, WeaponTypesEnum.Axes, 2, SlotEnum.Wepon);
+        WeponModel equipment = new WeponModel("Common Axe", 1, WeaponTypesEnum.Axes, 2);
 
         [Fact]
         public void Name_GetName_ShouldReturnCorrectName()
