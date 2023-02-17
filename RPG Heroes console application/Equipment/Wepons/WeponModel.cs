@@ -14,7 +14,7 @@ namespace RPG_Heroes_console_application.Equipment.Wepons
         public WeaponTypesEnum WeponType { get; private set; }
         public int WeaponDamage { get; private set; }
 
-        public WeponModel(string name, int requiredLevel, WeaponTypesEnum weponType, int weaponDamage, SlotEnum slot) : base(name, requiredLevel, slot)
+        public WeponModel(string name, int requiredLevel, WeaponTypesEnum weponType, int weaponDamage, SlotEnum slot = SlotEnum.Wepon) : base(name, requiredLevel, slot)
         {
             WeponType = weponType;
             WeaponDamage = weaponDamage;
