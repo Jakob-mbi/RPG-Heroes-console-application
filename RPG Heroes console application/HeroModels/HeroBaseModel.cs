@@ -55,11 +55,11 @@ namespace RPG_Heroes_console_application.HeroModels
         {
             if (!ValidWeaponTypes.Exists(validWepon => validWepon == wepon.WeponType))
             {
-                throw new InvalidWeaponException("You can not possess this armor type");
+                throw new InvalidWeaponException("You can not possess this Wepon type");
             }
             else if (wepon.RequiredLevel > Level)
             {
-                throw new InvalidWeaponException("You are not at the requierd level for this armor");
+                throw new InvalidWeaponException("You are not at the requierd level for this Wepon");
             }
             else
             {

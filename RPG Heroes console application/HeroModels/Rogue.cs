@@ -37,7 +37,7 @@ namespace RPG_Heroes_console_application.HeroModels
             {
                 totalDamage = 1;
             }
-            totalDamage *= (1.0 + Convert.ToDouble(HeroAttributes.Dexterity) / 100.0);
+            totalDamage *= (1.0 + Convert.ToDouble(TotalAttributes().Dexterity) / 100.0);
             return totalDamage;
         }
 

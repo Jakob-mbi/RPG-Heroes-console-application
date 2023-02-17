@@ -41,7 +41,7 @@ namespace RPG_Heroes_console_application.HeroModels
             {
                 totalDamage = 1;
             }
-            totalDamage *= (1.0 + Convert.ToDouble(HeroAttributes.Strength) / 100.0);
+            totalDamage *= (1.0 + Convert.ToDouble(TotalAttributes().Strength) / 100.0);
             return totalDamage;
         }
 
