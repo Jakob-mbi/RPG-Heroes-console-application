@@ -72,7 +72,7 @@ namespace RPG_Heroes_console_application.HeroModels
         public abstract double Damage();
         public virtual Attributes TotalAttributes()
         {
-            Attributes Total = new Attributes(HeroAttributes.Strength,HeroAttributes.Dexterity,HeroAttributes.Intelligence);
+            Attributes total = new Attributes(HeroAttributes.Strength,HeroAttributes.Dexterity,HeroAttributes.Intelligence);
 
 
             foreach (KeyValuePair<SlotEnum, EquipmentBaseModel?> armor in Equipment)
@@ -80,10 +80,10 @@ namespace RPG_Heroes_console_application.HeroModels
                 if (armor.Value is ArmorModel)
                 {
                     ArmorModel childClass = (ArmorModel)armor.Value;
-                    Total.LevelUpAttribtues(childClass.ArmorAttribute.Strength,childClass.ArmorAttribute.Dexterity,childClass.ArmorAttribute.Intelligence);
+                    total.LevelUpAttribtues(childClass.ArmorAttribute.Strength,childClass.ArmorAttribute.Dexterity,childClass.ArmorAttribute.Intelligence);
                 }
             }
-            return Total;
+            return total;
         }
         public virtual string Display()
         {
