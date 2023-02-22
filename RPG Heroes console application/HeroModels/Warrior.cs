@@ -17,7 +17,6 @@ namespace RPG_Heroes_console_application.HeroModels
 
         public Warrior(string name) : base(name)
         {
-            ClassOfHero = typeof(Warrior).ToString();
             HeroAttributes.InitialAttributes(5, 2, 1);
             ValidWeaponTypes.Add(WeaponTypesEnum.Axes);
             ValidWeaponTypes.Add(WeaponTypesEnum.Hammers);

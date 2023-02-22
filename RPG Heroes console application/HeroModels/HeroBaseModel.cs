@@ -28,6 +28,7 @@ namespace RPG_Heroes_console_application.HeroModels
         public HeroBaseModel(string name)
         {
             this.Name = name;
+            this.ClassOfHero = this.GetType().Name;
             Equipment.Add(SlotEnum.Wepon, value: null);
             Equipment.Add(SlotEnum.Legs, value: null);
             Equipment.Add(SlotEnum.Head, value: null);

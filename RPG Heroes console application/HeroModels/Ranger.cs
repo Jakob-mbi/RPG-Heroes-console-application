@@ -15,7 +15,6 @@ namespace RPG_Heroes_console_application.HeroModels
 
         public Ranger(string name) : base(name)
         {
-            ClassOfHero = typeof(Ranger).ToString();
             HeroAttributes.InitialAttributes(1, 7, 1);
             ValidWeaponTypes.Add(WeaponTypesEnum.Bows);
             ValidArmorTypes.Add(ArmorTypesEnum.Lether);

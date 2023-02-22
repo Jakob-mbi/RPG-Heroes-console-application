@@ -33,7 +33,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.MageClass
         public void ClassOfHero_GetClassOfHero_ShouldReturnCorrecttClassOfHero()
         {
             //Arrange
-            var expectedClassOfHero = typeof(Mage).ToString();
+            var expectedClassOfHero = "Mage";
             //act
             var actual = hero.ClassOfHero;
             //Assert

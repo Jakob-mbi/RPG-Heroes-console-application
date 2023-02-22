@@ -16,7 +16,6 @@ namespace RPG_Heroes_console_application.HeroModels
 
         public Mage(string name) : base(name)
         {
-            ClassOfHero = typeof(Mage).ToString();
             HeroAttributes.InitialAttributes(1, 1, 8);          
             ValidWeaponTypes.Add(WeaponTypesEnum.Staffs);
             ValidWeaponTypes.Add(WeaponTypesEnum.Wands);

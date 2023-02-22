@@ -14,7 +14,6 @@ namespace RPG_Heroes_console_application.HeroModels
 
         public Rogue(string name) : base(name)
         {
-            ClassOfHero = typeof(Rogue).ToString();
             HeroAttributes.InitialAttributes(2, 6, 1);
             ValidWeaponTypes.Add(WeaponTypesEnum.Daggers);
             ValidWeaponTypes.Add(WeaponTypesEnum.Swords);

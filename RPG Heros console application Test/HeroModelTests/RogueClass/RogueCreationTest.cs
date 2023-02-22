@@ -30,7 +30,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RogueClass
         public void ClassOfHero_GetClassOfHero_ShouldReturnCorrecttClassOfHero()
         {
             //Arrange
-            var expectedClassOfHero = typeof(Rogue).ToString();
+            var expectedClassOfHero = "Rogue";
             //act
             var actual = hero.ClassOfHero;
             //Assert

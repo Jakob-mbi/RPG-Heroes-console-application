@@ -31,7 +31,7 @@ namespace RPG_Heros_console_application_Test.HeroModelTests.RangerClass
         public void ClassOfHero_GetClassOfHero_ShouldReturnCorrecttClassOfHero()
         {
             //Arrange
-            var expectedClassOfHero = typeof(Ranger).ToString();
+            var expectedClassOfHero = "Ranger";
             //act
             var actual = hero.ClassOfHero;
             //Assert
